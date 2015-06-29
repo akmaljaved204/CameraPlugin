@@ -16,13 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true" >
         
-        <ImageButton
+        <Button
             android:id="@+id/button_capture"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
        		android:layout_margin="10dp"
-            android:src="@android:drawable/ic_menu_camera" />
+            android:background="@drawable/btn_shot" />
 
        <ToggleButton
            android:id="@+id/switch1"
