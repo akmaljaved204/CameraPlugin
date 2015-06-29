@@ -39,7 +39,6 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.ZoomControls;
 
@@ -99,7 +98,7 @@ public class CameraActivity extends Activity {
 		preview.addView(mPreview);
 		
 		// Add a listener to the Capture button
-		Button captureButton = (Button) findViewById(getResources().getIdentifier("button_capture", "id", getPackageName()));
+		ImageButton captureButton = (ImageButton) findViewById(getResources().getIdentifier("button_capture", "id", getPackageName()));
 		captureButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 
