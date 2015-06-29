@@ -56,11 +56,12 @@ public class CameraActivity extends Activity {
 	int currentZoomLevel = 0, maxZoomLevel = 0;
 	private OrientationEventListener mOrientationEventListener;
 	private int mOrientation = -1;
-
+    private int led = 0;
 	private static final int ORIENTATION_PORTRAIT_NORMAL = 1;
 	private static final int ORIENTATION_PORTRAIT_INVERTED = 2;
 	private static final int ORIENTATION_LANDSCAPE_NORMAL = 3;
 	private static final int ORIENTATION_LANDSCAPE_INVERTED = 4;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +99,11 @@ public class CameraActivity extends Activity {
 		FrameLayout preview = (FrameLayout) findViewById(getResources().getIdentifier("camera_preview", "id", getPackageName()));
 		preview.addView(mPreview);
 		
+		
+		final int imgFlashNo = getResources().getIdentifier("@drawable/btn_flash_no", null, getPackageName());
+        final int imgFlashAuto = getResources().getIdentifier("@drawable/btn_flash_auto", null, getPackageName());
+        final int imgFlashOn = getResources().getIdentifier("@drawable/btn_flash_on", null, getPackageName());
+	    final Button flashButton = (Button) findViewById(getResources().getIdentifier("flashButton", "id", getPackageName()));
 		// Add a listener to the Capture button
 		Button captureButton = (Button) findViewById(getResources().getIdentifier("button_capture", "id", getPackageName()));
 		captureButton.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +156,36 @@ public class CameraActivity extends Activity {
 			tb.setVisibility(View.GONE);
 		}
         tb.setVisibility(View.GONE);
+		
+		
+		
+		if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
+			 flashButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Parameters p = camera.getParameters();
+                    if (led == 0) {
+                        p.setFlashMode(Camera.Parameters.FLASH_MODE_AUTO);
+                        flashButton.setBackgroundResource(imgFlashAuto);
+                        led = 1;
+                    } else if (led == 1) {
+                        p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                        flashButton.setBackgroundResource(imgFlashOn);
+                        led = 2;
+                    } else if (led == 2) {
+                        p.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
+                        flashButton.setBackgroundResource(imgFlashNo);
+                        led = 0;
+                    }
+                    mCamera.setParameters(p);
+                    mCamera.startPreview();
+                }
+            });
+		} else {
+			flashButton.setVisibility(View.GONE);
+		}
+		
+		
+		
 		ZoomControls zoomControls = (ZoomControls) findViewById(getResources().getIdentifier("zoomControls1", "id", getPackageName()));
 		if (params.isZoomSupported() && params.isSmoothZoomSupported()) {
 			// most phones
