@@ -32,6 +32,7 @@
            android:layout_alignParentLeft="true"
            android:layout_below="@+id/button_capture"
            android:layout_margin="10dp"
+           android:visibility="gone"
            android:text="Flash" />
        
         <ImageButton
@@ -43,6 +44,7 @@
             android:layout_gravity="bottom|right"
             android:layout_toRightOf="@+id/switch1"
             android:layout_margin="10dp"
+            android:visibility="gone"
             android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
         <ZoomControls
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/button_cancel"
             android:layout_margin="10dp"
+            android:visibility="gone"
             android:gravity="center" />
     </RelativeLayout>
 </RelativeLayout>
