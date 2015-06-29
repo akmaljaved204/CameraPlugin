@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 			android:layout_centerHorizontal="true"
-       		android:layout_margin="10dp"
+       		android:layout_marginBottom="10dp"
             android:background="@drawable/btn_shot"/>
 
        <ToggleButton
@@ -54,4 +54,13 @@
             android:layout_margin="10dp"
             android:gravity="center" />
     </RelativeLayout>
+	 <Button
+            android:id="@+id/flashButton"
+            android:layout_height="37dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_flash_no"
+            android:layout_width="38dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="20dp" />
 </RelativeLayout>
