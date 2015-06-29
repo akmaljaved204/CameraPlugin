@@ -128,6 +128,7 @@ public class CameraActivity extends Activity {
 				finish();
 			}
 		});
+		cancelButton.setVisibility(View.GONE);
 
 		// Is the toggle on?
 		CompoundButton tb = (CompoundButton) findViewById(getResources().getIdentifier("switch1", "id", getPackageName()));
@@ -147,7 +148,7 @@ public class CameraActivity extends Activity {
 		} else {
 			tb.setVisibility(View.GONE);
 		}
-
+        tb.setVisibility(View.GONE);
 		ZoomControls zoomControls = (ZoomControls) findViewById(getResources().getIdentifier("zoomControls1", "id", getPackageName()));
 		if (params.isZoomSupported() && params.isSmoothZoomSupported()) {
 			// most phones
@@ -205,6 +206,7 @@ public class CameraActivity extends Activity {
 			// no zoom on phone
 			zoomControls.setVisibility(View.GONE);
 		}
+		zoomControls.setVisibility(View.GONE);
 	}
 
 	@Override
