@@ -162,7 +162,7 @@ public class CameraActivity extends Activity {
 		if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
 			 flashButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Parameters p = camera.getParameters();
+                    Parameters p = mCamera.getParameters();
                     if (led == 0) {
                         p.setFlashMode(Camera.Parameters.FLASH_MODE_AUTO);
                         flashButton.setBackgroundResource(imgFlashAuto);
