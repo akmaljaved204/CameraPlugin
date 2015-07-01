@@ -96,7 +96,7 @@ public class CameraActivity extends Activity {
 		// Create a Preview and set it as the content of activity.
 		mPreview = new CameraPreview(this, mCamera);
 
-		FrameLayout preview = (FrameLayout) findViewById(getResources().getIdentifier("camera_preview", "id", getPackageName()));
+		SurfaceView preview = (SurfaceView) findViewById(getResources().getIdentifier("camera_preview", "id", getPackageName()));
 		preview.addView(mPreview);
 		
 		

@@ -4,12 +4,12 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent" >
 
-    <FrameLayout
+    <SurfaceView
         android:id="@+id/camera_preview"
         android:layout_width="fill_parent"
         android:layout_height="match_parent" >
 
-    </FrameLayout>
+    </SurfaceView>
 
     <RelativeLayout
         android:layout_width="wrap_content"
