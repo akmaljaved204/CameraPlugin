@@ -38,6 +38,7 @@ import android.view.OrientationEventListener;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
+import android.widget.SurfaceView;
 import android.widget.ImageButton;
 import android.widget.Button;
 import android.widget.RelativeLayout;
